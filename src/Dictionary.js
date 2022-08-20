@@ -1,5 +1,6 @@
-import axios from "axios";
 import React, {useState} from "react";
+import 'bootstrap/dist/css/bootstrap.css';
+import axios from "axios";
 import "./Dictionary.css";
 import Results from "./Results";
 
@@ -29,7 +30,9 @@ export default function Dictionary(){
                 <button className="search-button">Submit</button>
                 <Results results={results}/>
             </form>
+            <footer className="fixed-bottom"><a target="_blank"rel="noreferrer"href="https://github.com/natalie-0073/react-dictionary-app.git">Open-source code</a> by Nataliia Chala</footer>
             </div>
+                        
         </div>
     );
 }
