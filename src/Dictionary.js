@@ -4,9 +4,10 @@ import axios from "axios";
 import "./Dictionary.css";
 import Results from "./Results";
 
-export default function Dictionary(){
-    const [keyword, setKeyword]=useState("");
+export default function Dictionary(props){
+    const [keyword, setKeyword]=useState(props.defaultKeyword);
     const [results, setResults]=useState(null);
+    const [loaded, setLoaded]=useState(false);
     function handleKeywordUpdate(event){
         
         setKeyword(event.target.value);
@@ -15,24 +16,43 @@ export default function Dictionary(){
         
         setResults(response.data[0]);
     }
-    function search(event){
+    function handleSubmit(event){
         event.preventDefault();
+        search();
+    }
+    function search(){
         
         let apiUrl=`https://api.dictionaryapi.dev/api/v2/entries/en/${keyword}`;
         
         axios.get(apiUrl).then(handleResponse);
+        
     }
-    return (
-        <div className="Dictionary">
-            <div className="container">
-            <form onSubmit={search}>
-                <input type="search" onChange={handleKeywordUpdate} className="search-input"/>
-                <button className="search-button">Submit</button>
+    function load(){
+        setLoaded(true);
+        search();
+    }
+        if(loaded){
+        return (
+            <div className="Dictionary">
+                <div className="container">
+                    <div className="section">
+                <form onSubmit={handleSubmit}>
+                    <input type="search" onChange={handleKeywordUpdate} className="search-input" defaultValue={props.defaultKeyword}/>
+                    <button className="search-button">Submit</button>
+                    
+                </form>
+                </div>   
                 <Results results={results}/>
-            </form>
-            <footer className="fixed-bottom"><a target="_blank"rel="noreferrer"href="https://github.com/natalie-0073/react-dictionary-app.git">Open-source code</a> by Nataliia Chala</footer>
+                <footer className="fixed-bottom"><a target="_blank"rel="noreferrer"href="https://github.com/natalie-0073/react-dictionary-app.git">Open-source code</a> by Nataliia Chala</footer>
+                </div>
+               
             </div>
-                        
-        </div>
-    );
+        );
+        
+    }
+    else{
+        load();
+        return "Loading..";
+    }
+    
 }

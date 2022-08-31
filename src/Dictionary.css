@@ -1,6 +1,9 @@
+ body{
+    background-color: #BACBDB;
+ }
  .container{
     display: block;
-    max-width: 300px;
+    max-width: 500px;
     margin: 30px auto;
 
     }
@@ -13,4 +16,8 @@
     }
     footer{
         text-align: center;
+    }
+    .section{
+        background-color: #E1DCE0;
+        border: 1px solid black;
     }
