@@ -35,16 +35,16 @@ export default function Dictionary(props){
         return (
             <div className="Dictionary">
                 <div className="container">
-                    <div className="section">
+                    
                 <form onSubmit={handleSubmit}>
                     <input type="search" onChange={handleKeywordUpdate} className="search-input" defaultValue={props.defaultKeyword}/>
                     <button className="search-button">Submit</button>
                     
                 </form>
-                </div>   
+                
                 <Results results={results}/>
                 <footer className="fixed-bottom"><a target="_blank"rel="noreferrer"href="https://github.com/natalie-0073/react-dictionary-app.git">Open-source code</a> by Nataliia Chala</footer>
-                </div>
+                </div>  
                
             </div>
         );
