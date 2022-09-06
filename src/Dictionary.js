@@ -56,7 +56,7 @@ setPhotos(response.data.photos);
                 <div className="section">
                 <Photos photos={photos}/>
                 </div>
-                <footer className="fixed-bottom"><a target="_blank"rel="noreferrer"href="https://github.com/natalie-0073/react-dictionary-app.git">Open-source code</a> by Nataliia Chala</footer>
+                <footer><a target="_blank"rel="noreferrer"href="https://github.com/natalie-0073/react-dictionary-app.git">Open-source code</a> by <a href="https://www.linkedin.com/in/nataliia-chala0073/" target="_blank" rel="noreferrer">Nataliia Chala</a></footer>
                 </div>  
                
             </div>
