@@ -7,6 +7,7 @@
     max-width: 700px;
     margin: 30px auto;
     font-weight: 400;
+    position: relative;
     }
     .title{
         text-align: center;
@@ -17,7 +18,7 @@
     }
     .search-input{
         padding: 8px;
-        width: 500px;
+        width: 70%;
         border-radius: 20px;
         border: none;
         box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 2px 0px;
